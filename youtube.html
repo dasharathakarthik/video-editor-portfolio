@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>YouTube Edit – Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="main.js"></script>
+  </head>
+<body>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-text">Video Editor &amp; Motion Designer</span>
+    </div>
+    <nav class="nav">
+      <a class="nav-link is-active" href="index.html">Work</a>
+      <a class="nav-link" href="index.html#about">About</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section class="page page--active" aria-label="YouTube edits">
+      <div class="page-header">
+        <h2>YouTube Edit</h2>
+        <p>Long-form edits focused on narrative, pacing, and visual clarity.</p>
+      </div>
+      <!-- Grid will be populated from Firestore via youtube-data.js -->
+      <div class="video-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Video Editor &amp; Motion Designer. All rights reserved.</p>
+  </footer>
+
+  <!-- Firebase + Auth + Firestore (v8) for public YouTube page -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <!-- Reuse the same Firebase config as admin (initializes firebase, auth, db) -->
+  <script src="./admin/firebase-config.js"></script>
+  <!-- Load YouTube videos from Firestore and render inline, muted thumbnails -->
+  <script src="./youtube-data.js"></script>
+</body>
+</html>

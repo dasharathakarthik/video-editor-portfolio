@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin Dashboard – Portfolio Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="logo-mark">PORTFOLIO // ADMIN</div>
+          <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">
+            ☰
+          </button>
+        </div>
+
+        <div class="sidebar-nav">
+          <div class="nav-section-label">Navigation</div>
+          <div class="nav-link active" data-target="section-dashboard">
+            <span class="icon">⦿</span>
+            <span>Dashboard</span>
+          </div>
+          <div class="nav-link" data-target="section-add-video">
+            <span class="icon">＋</span>
+            <span>Add New Video</span>
+          </div>
+          <div class="nav-link" data-target="section-manage-videos">
+            <span class="icon">▣</span>
+            <span>Manage Videos</span>
+          </div>
+          <div class="nav-link" data-target="section-categories">
+            <span class="icon">◎</span>
+            <span>Categories</span>
+          </div>
+          <div class="nav-link" data-target="section-settings">
+            <span class="icon">⚙</span>
+            <span>Settings</span>
+          </div>
+        </div>
+
+        <div class="sidebar-footer">
+          <button class="btn btn-ghost" id="logout-btn">
+            <span>Logout</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <main class="main">
+        <header class="main-header">
+          <div class="main-title-block">
+            <div class="main-title">Video Control Deck</div>
+            <div class="main-subtitle">
+              Manage featured videos, categories, and portfolio data in real time.
+            </div>
+          </div>
+          <div class="chip" id="user-chip">
+            <span>Admin Session</span>
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #34d399"></span>
+          </div>
+        </header>
+
+        <!-- Dashboard section -->
+        <section class="section-card" id="section-dashboard">
+          <div class="section-header">
+            <div class="section-title">Overview</div>
+            <span class="muted">Quick stats from Firestore</span>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-label">Total Videos</div>
+              <div class="stat-value" id="stat-total-videos">0</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Categories</div>
+              <div class="stat-value" id="stat-total-categories">0</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Most Populated Category</div>
+              <div class="stat-value" id="stat-top-category">–</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Add New Video section -->
+        <section class="section-card hidden" id="section-add-video">
+          <div class="section-header">
+            <div class="section-title">Add New Video</div>
+            <span class="muted">Attach a YouTube video to your portfolio</span>
+          </div>
+
+          <form id="add-video-form">
+            <div class="form-group">
+              <div class="form-label">
+                <span>YouTube Link or ID</span>
+              </div>
+              <div class="form-input-wrap">
+                <input
+                  type="text"
+                  id="input-youtube-url"
+                  class="form-input"
+                  placeholder="https://www.youtube.com/watch?v=VIDEO_ID"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <div class="form-label">
+                  <span>Category</span>
+                </div>
+                <div class="form-input-wrap">
+                  <select id="input-category" class="form-input" required></select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-label">
+                  <span>Title</span>
+                </div>
+                <div class="form-input-wrap">
+                  <input
+                    type="text"
+                    id="input-title"
+                    class="form-input"
+                    placeholder="Video title"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-label">
+                <span>Short Description</span>
+              </div>
+              <div class="form-input-wrap">
+                <input
+                  type="text"
+                  id="input-description"
+                  class="form-input"
+                  placeholder="A short description for this video"
+                  maxlength="200"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="thumbnail-preview" id="thumbnail-preview">
+              <div class="placeholder">Thumbnail preview will appear here</div>
+            </div>
+
+            <div style="margin-top: 14px; display: flex; justify-content: flex-end">
+              <button type="submit" class="btn btn-primary" id="btn-add-video">
+                <span>Add Video</span>
+              </button>
+            </div>
+
+            <div id="add-video-status" class="status"></div>
+          </form>
+        </section>
+
+        <!-- Manage Videos section -->
+        <section class="section-card hidden" id="section-manage-videos">
+          <div class="section-header">
+            <div class="section-title">Manage Videos</div>
+            <span class="muted">Live Firestore feed with filters</span>
+          </div>
+
+          <div class="toolbar">
+            <select id="filter-category">
+              <option value="">All categories</option>
+            </select>
+            <input
+              type="text"
+              id="filter-search"
+              placeholder="Search by title…"
+            />
+            <select id="filter-sort">
+              <option value="newest">Newest first</option>
+              <option value="oldest">Oldest first</option>
+            </select>
+          </div>
+
+          <div id="videos-container" class="video-grid"></div>
+          <div id="manage-videos-status" class="status"></div>
+        </section>
+
+        <!-- Categories section -->
+        <section class="section-card hidden" id="section-categories">
+          <div class="section-header">
+            <div class="section-title">Categories</div>
+            <span class="muted">Organize your video taxonomy</span>
+          </div>
+
+          <form id="add-category-form" style="margin-bottom: 12px">
+            <div class="form-row">
+              <div class="form-group">
+                <div class="form-label">
+                  <span>New Category</span>
+                </div>
+                <div class="form-input-wrap">
+                  <input
+                    type="text"
+                    id="input-category-name"
+                    class="form-input"
+                    placeholder="e.g. Talks, Tutorials, Showreel"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group" style="align-self: flex-end">
+                <button type="submit" class="btn btn-primary">
+                  <span>Add</span>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <ul id="category-list" class="category-list"></ul>
+          <div id="categories-status" class="status"></div>
+        </section>
+
+        <!-- Settings section -->
+        <section class="section-card hidden" id="section-settings">
+          <div class="section-header">
+            <div class="section-title">Settings</div>
+            <span class="muted">Session & environment</span>
+          </div>
+          <p style="font-size: 0.9rem; color: #9ca3af">
+            Admin accounts are created manually in Firebase Authentication (Email &amp; Password).
+            Public sign-up is disabled. Ensure you keep your API keys and project configuration
+            private in version control.
+          </p>
+          <p style="font-size: 0.86rem; color: #6b7280">
+            To revoke access for an admin, delete their account in Firebase Authentication. All
+            write operations in Firestore require an authenticated user session.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <!-- Modals: Edit & Delete confirmation -->
+    <div class="modal-backdrop" id="modal-backdrop-edit">
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-title">Edit Video</div>
+          <button class="btn btn-ghost" type="button" id="btn-close-edit-modal">
+            ✕
+          </button>
+        </div>
+        <form id="edit-video-form">
+          <div class="form-group">
+            <div class="form-label">
+              <span>Title</span>
+            </div>
+            <div class="form-input-wrap">
+              <input
+                type="text"
+                id="edit-title"
+                class="form-input"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label">
+              <span>Description</span>
+            </div>
+            <div class="form-input-wrap">
+              <input
+                type="text"
+                id="edit-description"
+                class="form-input"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label">
+              <span>Category</span>
+            </div>
+            <div class="form-input-wrap">
+              <select id="edit-category" class="form-input" required></select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-ghost" id="btn-cancel-edit">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary" id="btn-save-edit">
+              Save Changes
+            </button>
+          </div>
+          <div id="edit-video-status" class="status"></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="modal-backdrop-delete">
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-title">Delete Video</div>
+        </div>
+        <p style="font-size: 0.9rem; color: #e5e7eb">
+          Are you sure you want to permanently delete this video from Firestore?
+        </p>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" id="btn-cancel-delete">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-primary" id="btn-confirm-delete">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase v8 SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Config & dashboard logic -->
+    <script src="./firebase-config.js"></script>
+    <script src="./admin.js"></script>
+  </body>
+</html>

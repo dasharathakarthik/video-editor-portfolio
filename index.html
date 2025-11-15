@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio – Video Editor & Motion Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of a video editor and motion designer specializing in reels, YouTube edits, ads, and 3D layered compositions."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <!-- Page transition overlay -->
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-text">Video Editor &amp; Motion Designer</span>
+    </div>
+    <nav class="nav">
+      <a class="nav-link is-active" href="index.html">Work</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <!-- HOME / WORK OVERVIEW -->
+    <section class="page page--active" data-page="home" aria-label="Featured work">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="hero-kicker">Showreel</p>
+          <h1 class="hero-title">
+            Cinematography,
+            <br />
+            edits &amp; motion design.
+          </h1>
+          <p class="hero-subtitle">
+            Cinematographer and video editor creating reels, ads, YouTube content and advanced 3D-integrated
+            edits for brands and agencies.
+          </p>
+          <div class="hero-cta-row">
+            <button class="btn btn-primary" data-scroll-to="#categories">
+              View categories
+            </button>
+            <button class="btn btn-ghost" data-scroll-to="#about">
+              About me
+            </button>
+          </div>
+          <div class="hero-meta">
+            <span class="pill">Reels &amp; YouTube</span>
+            <span class="pill">Ads &amp; campaigns</span>
+            <span class="pill">3D-integrated visuals</span>
+          </div>
+        </div>
+
+        <div class="hero-media" data-parallax>
+          <div class="hero-media-frame">
+            <!-- HERO YOUTUBE VIDEO (click-to-play) -->
+            <div class="hero-video-embed" data-hero-video-id="HERO_VIDEO_ID"></div>
+          </div>
+          <div class="hero-media-glow"></div>
+        </div>
+      </section>
+
+      <!-- CATEGORY CARDS -->
+      <section id="categories" class="categories" aria-label="Work categories">
+        <header class="section-header">
+          <h2>Curated work by category</h2>
+          <p>
+            Each category opens a focused gallery with high-impact edits. No clutter, only the work that
+            matters.
+          </p>
+        </header>
+
+        <div class="category-grid">
+          <a class="category-card" href="reels.html">
+            <div class="category-card-inner">
+              <div class="category-header">
+                <div class="category-label">01</div>
+                <span class="category-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <polygon points="10,9 10,15 15,12"></polygon>
+                  </svg>
+                </span>
+                <h3>Reels Edit</h3>
+              </div>
+              <p>Snappy, scroll-stopping vertical edits built for retention and shareability.</p>
+              <span class="category-chip">Short-form</span>
+            </div>
+          </a>
+
+          <a class="category-card" href="youtube.html">
+            <div class="category-card-inner">
+              <div class="category-header">
+                <div class="category-label">02</div>
+                <span class="category-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="5" y="8" width="11" height="8" rx="1"></rect>
+                    <polygon points="16,10 19,12 16,14"></polygon>
+                  </svg>
+                </span>
+                <h3>YouTube Edit</h3>
+              </div>
+              <p>Long-form storytelling with tight pacing and clean visual language.</p>
+              <span class="category-chip">YouTube</span>
+            </div>
+          </a>
+
+          <a class="category-card" href="ads.html">
+            <div class="category-card-inner">
+              <div class="category-header">
+                <div class="category-label">03</div>
+                <span class="category-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5,9 14,9 18,6 18,18 14,15 5,15"></polygon>
+                    <rect x="3" y="10" width="2" height="4"></rect>
+                  </svg>
+                </span>
+                <h3>Ads Edit</h3>
+              </div>
+              <p>Commercial edits, performance-focused cutdowns, and platform-native ad formats.</p>
+              <span class="category-chip">Commercial</span>
+            </div>
+          </a>
+
+          <a class="category-card" href="3dmodel.html">
+            <div class="category-card-inner">
+              <div class="category-header">
+                <div class="category-label">04</div>
+                <span class="category-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="12,4 6,8 12,12 18,8"></polygon>
+                    <polygon points="6,8 6,16 12,20 12,12"></polygon>
+                    <polygon points="18,8 18,16 12,20 12,12"></polygon>
+                  </svg>
+                </span>
+                <h3>3D Model Integration</h3>
+              </div>
+              <p>
+                3D models composited into live-action footage with tracked motion and integrated lighting.
+              </p>
+              <span class="category-chip">3D + live action</span>
+            </div>
+          </a>
+
+          <a class="category-card" href="3dlayers.html">
+            <div class="category-card-inner">
+              <div class="category-header">
+                <div class="category-label">05</div>
+                <span class="category-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="12,5 4,9 12,13 20,9"></polygon>
+                    <polygon points="12,13 5,9.5 5,12 12,16 19,12 19,9.5"></polygon>
+                  </svg>
+                </span>
+                <h3>3D Layers Edit</h3>
+              </div>
+              <p>Advanced 3D layers, parallax motion, and dimensional typography for intros and titles.</p>
+              <span class="category-chip">Motion graphics</span>
+            </div>
+          </a>
+
+          <a class="category-card" href="cinematography.html">
+            <div class="category-card-inner">
+              <div class="category-header">
+                <div class="category-label">06</div>
+                <span class="category-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="4" y="7" width="14" height="10" rx="1"></rect>
+                    <circle cx="8" cy="12" r="1.5"></circle>
+                    <circle cx="14" cy="12" r="1.5"></circle>
+                  </svg>
+                </span>
+                <h3>Cinematography</h3>
+              </div>
+              <p>Shot, framed, and edited sequences focused on light, movement, and storytelling.</p>
+              <span class="category-chip">Direction &amp; camera</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" aria-label="About me">
+      <div class="page-header">
+        <h2>About Me</h2>
+        <p>Cinematographer and video editor focused on clean, modern visuals.</p>
+      </div>
+
+      <div class="about-layout">
+        <section class="about-block">
+          <h3>Bio</h3>
+          <p>
+            Cinematographer and video editor with 2+ years of experience creating reels, ads, YouTube content,
+            and advanced 3D-integrated edits. I previously worked at Kalyani Motors NEXA (Suzuki) producing
+            visual communication content, and I’m currently editing for an advertising agency. I handle
+            cinematography, commercial editing, motion graphics, and 3D-enhanced visuals using After Effects,
+            Premiere Pro, Illustrator, and Photoshop.
+          </p>
+        </section>
+
+        <section class="about-block">
+          <h3>Work History</h3>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Advertising Agency – Video Editor &amp; Motion Designer</h4>
+                <p>Commercial edits, performance ads, branded visuals, and multi-platform delivery.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Kalyani Motors NEXA (Suzuki) – Content &amp; Visual Communication</h4>
+                <p>Showcased vehicles and brand experiences through digital, social, and in-house content.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="about-block">
+          <h3>Tools &amp; Experience</h3>
+          <div class="skills-grid">
+            <span class="skill-pill">Cinematography</span>
+            <span class="skill-pill">Video Editing</span>
+            <span class="skill-pill">Motion Graphics</span>
+            <span class="skill-pill">3D Model Integration</span>
+            <span class="skill-pill">Adobe After Effects</span>
+            <span class="skill-pill">Adobe Premiere Pro</span>
+            <span class="skill-pill">Adobe Illustrator</span>
+            <span class="skill-pill">Adobe Photoshop</span>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" aria-label="Contact">
+      <div class="page-header">
+        <h2>Contact</h2>
+        <p>Let’s collaborate on your next campaign, video series, or brand story.</p>
+      </div>
+
+      <div class="contact-layout">
+        <form class="contact-form" autocomplete="on">
+          <div class="field-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="field-row">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+            />
+          </div>
+          <div class="field-row">
+            <label for="project">Project details</label>
+            <textarea
+              id="project"
+              name="project"
+              rows="4"
+              placeholder="Tell me about the project, timeline, and deliverables."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            Send message
+          </button>
+          <p class="form-footnote">
+            This is a static form by default. Connect it to your preferred form handler or email service.
+          </p>
+        </form>
+
+        <section class="contact-info">
+          <h3>Connect</h3>
+          <p>Available for freelance, collaborations, and select long-term projects.</p>
+          <ul class="contact-links">
+            <li><a href="mailto:you@example.com">you@example.com</a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="https://www.behance.net/" target="_blank" rel="noreferrer">Behance</a></li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Video Editor &amp; Motion Designer. All rights reserved.</p>
+  </footer>
+</body>
+</html>

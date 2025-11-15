@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reels Edit – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-text">Video Editor &amp; Motion Designer</span>
+    </div>
+    <nav class="nav">
+      <a class="nav-link is-active" href="index.html">Work</a>
+      <a class="nav-link" href="index.html#about">About</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section class="page page--active" aria-label="Reels edits">
+      <div class="page-header">
+        <h2>Reels Edit</h2>
+        <p>Vertical-first edits crafted for fast hooks, high watch time, and shareability.</p>
+      </div>
+      <div class="video-grid">
+        <article class="video-item">
+          <div class="video-frame">
+            <div class="yt-thumb" data-video-id="REELS_01_ID"></div>
+          </div>
+          <h3>Reel 01</h3>
+          <p>High-impact vertical edit tailored for short-form platforms.</p>
+        </article>
+
+        <article class="video-item">
+          <div class="video-frame">
+            <div class="yt-thumb" data-video-id="REELS_02_ID"></div>
+          </div>
+          <h3>Reel 02</h3>
+          <p>Fast transitions and bold typography to hold attention.</p>
+        </article>
+
+        <article class="video-item">
+          <div class="video-frame">
+            <div class="yt-thumb" data-video-id="REELS_03_ID"></div>
+          </div>
+          <h3>Reel 03</h3>
+          <p>Snappy pacing and rhythmic cuts built around the soundtrack.</p>
+        </article>
+
+        <article class="video-item">
+          <div class="video-frame">
+            <div class="yt-thumb" data-video-id="REELS_04_ID"></div>
+          </div>
+          <h3>Reel 04</h3>
+          <p>Brand-focused reel combining motion graphics and clean framing.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Video Editor &amp; Motion Designer. All rights reserved.</p>
+  </footer>
+</body>
+</html>

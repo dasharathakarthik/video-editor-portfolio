@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-text">Video Editor &amp; Motion Designer</span>
+    </div>
+    <nav class="nav">
+      <a class="nav-link" href="index.html">Work</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link is-active" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section class="page page--active" aria-label="Contact">
+      <div class="page-header">
+        <h2>Contact</h2>
+        <p>Let’s collaborate on your next campaign, video series, or brand story.</p>
+      </div>
+
+      <div class="contact-layout">
+        <form class="contact-form" autocomplete="on">
+          <div class="field-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="field-row">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+            />
+          </div>
+          <div class="field-row">
+            <label for="project">Project details</label>
+            <textarea
+              id="project"
+              name="project"
+              rows="4"
+              placeholder="Tell me about the project, timeline, and deliverables."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            Send message
+          </button>
+          <p class="form-footnote">
+            This is a static form by default. Connect it to your preferred form handler or email service.
+          </p>
+        </form>
+
+        <section class="contact-info">
+          <h3>Connect</h3>
+          <p>Available for freelance, collaborations, and select long-term projects.</p>
+          <ul class="contact-links">
+            <li><a href="mailto:you@example.com">you@example.com</a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="https://www.behance.net/" target="_blank" rel="noreferrer">Behance</a></li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Video Editor &amp; Motion Designer. All rights reserved.</p>
+  </footer>
+</body>
+</html>

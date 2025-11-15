@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Me – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-text">Video Editor &amp; Motion Designer</span>
+    </div>
+    <nav class="nav">
+      <a class="nav-link" href="index.html">Work</a>
+      <a class="nav-link is-active" href="about.html">About</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section class="page page--active" aria-label="About me">
+      <div class="page-header">
+        <h2>About Me</h2>
+        <p>Cinematographer and video editor focused on clean, modern visuals.</p>
+      </div>
+
+      <div class="about-layout">
+        <section class="about-block">
+          <h3>Bio</h3>
+          <p>
+            Cinematographer and video editor with 2+ years of experience creating reels, ads, YouTube content,
+            and advanced 3D-integrated edits. I previously worked at Kalyani Motors NEXA (Suzuki) producing
+            visual communication content, and I’m currently editing for an advertising agency. I handle
+            cinematography, commercial editing, motion graphics, and 3D-enhanced visuals using After Effects,
+            Premiere Pro, Illustrator, and Photoshop.
+          </p>
+        </section>
+
+        <section class="about-block">
+          <h3>Work History</h3>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Advertising Agency – Video Editor &amp; Motion Designer</h4>
+                <p>Commercial edits, performance ads, branded visuals, and multi-platform delivery.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Kalyani Motors NEXA (Suzuki) – Content &amp; Visual Communication</h4>
+                <p>Showcased vehicles and brand experiences through digital, social, and in-house content.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="about-block">
+          <h3>Tools &amp; Experience</h3>
+          <div class="skills-grid">
+            <span class="skill-pill">Cinematography</span>
+            <span class="skill-pill">Video Editing</span>
+            <span class="skill-pill">Motion Graphics</span>
+            <span class="skill-pill">3D Model Integration</span>
+            <span class="skill-pill">Adobe After Effects</span>
+            <span class="skill-pill">Adobe Premiere Pro</span>
+            <span class="skill-pill">Adobe Illustrator</span>
+            <span class="skill-pill">Adobe Photoshop</span>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Video Editor &amp; Motion Designer. All rights reserved.</p>
+  </footer>
+</body>
+</html>

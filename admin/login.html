@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin Login – Portfolio Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="auth-page">
+    <div class="auth-card">
+      <div class="auth-card-inner">
+        <div class="auth-title">
+          <h1>Control Node</h1>
+          <span class="badge">Admin Only</span>
+        </div>
+        <p class="auth-subtitle">
+          Secure access to your portfolio’s video matrix. Authorized operators only.
+        </p>
+
+        <form id="login-form" autocomplete="off">
+          <div class="form-group">
+            <div class="form-label">
+              <span>Email</span>
+            </div>
+            <div class="form-input-wrap">
+              <input
+                type="email"
+                id="email"
+                class="form-input"
+                placeholder="admin@your-domain.com"
+                value="admin@test.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-label">
+              <span>Password</span>
+            </div>
+            <div class="form-input-wrap">
+              <input
+                type="password"
+                id="password"
+                class="form-input"
+                placeholder="••••••••••"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="login-btn">
+            <span>Authenticate</span>
+          </button>
+
+          <div id="login-status" class="status"></div>
+        </form>
+
+        <div
+          style="
+            margin-top: 12px;
+            font-size: 0.78rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+          "
+        >
+          TEMP ADMIN CREDENTIALS FOR TESTING:&nbsp;ADMIN@TEST.COM / ADMIN123!
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase v8 SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Config & login logic -->
+    <script src="./firebase-config.js"></script>
+    <script src="./login.js"></script>
+  </body>
+</html>

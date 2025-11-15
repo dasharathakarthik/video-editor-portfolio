@@ -1,0 +1,55 @@
+{
+  "description": "Admin panel Firebase integration and authentication setup for portfolio site",
+  "access": {
+    "login_url_pattern": "https://YOUR_DOMAIN/admin/login.html",
+    "dashboard_url_pattern": "https://YOUR_DOMAIN/admin/",
+    "test_credentials": {
+      "email": "admin@test.com",
+      "password_hint": "Admin123! (change in Firebase Auth once live)"
+    }
+  },
+  "firebase": {
+    "project_id": "admin-panel-790c9",
+    "auth_enabled": true,
+    "firestore_collections": [
+      "videos",
+      "categories"
+    ],
+    "config_file": "admin/firebase-config.js"
+  },
+  "admin_ui": {
+    "files": [
+      "admin/login.html",
+      "admin/login.js",
+      "admin/index.html",
+      "admin/admin.js",
+      "admin/styles.css"
+    ],
+    "features": [
+      "Email/password authentication via Firebase Auth",
+      "Auth guard for all admin pages",
+      "Add video form with category selection and YouTube parsing",
+      "Real-time video list with edit/delete",
+      "Categories management with drag-and-drop ordering"
+    ]
+  },
+  "seed_content": {
+    "videos": [
+      {
+        "youtube_url": "https://www.youtube.com/watch?v=nmIROFk-000&list=RDnmIROFk-000&start_radio=1",
+        "youtube_id": "nmIROFk-000",
+        "title": "Featured YouTube Edit",
+        "description": "Featured YouTube edit from your playlist.",
+        "category": "YouTube"
+      }
+    ]
+  },
+  "usage_notes": [
+    "On first run, the admin panel seeds the categories collection with the same categories used on the public portfolio: Reels Edit, YouTube Edit, Ads Edit, 3D Model Integration, 3D Layers Edit, Cinematography.",
+    "To add more categories later, use the Categories section inside the admin dashboard. These populate the category dropdown on the Add Video form.",
+    "Videos are stored in Firestore collection 'videos' with fields: youtube_id, title, description, category, created_at.",
+    "Categories are stored in collection 'categories' with fields: name, order.",
+    "If the Add Video category dropdown is empty, ensure Firestore rules allow read/write for authenticated admins."
+  ],
+  "last_updated": "2025-11-15T15:54:29Z"
+}

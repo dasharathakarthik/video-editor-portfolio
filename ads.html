@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ads Edit – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-text">Video Editor &amp; Motion Designer</span>
+    </div>
+    <nav class="nav">
+      <a class="nav-link is-active" href="index.html">Work</a>
+      <a class="nav-link" href="index.html#about">About</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section class="page page--active" aria-label="Ads edits">
+      <div class="page-header">
+        <h2>Ads Edit</h2>
+        <p>Commercial work, performance ads, and campaigns designed to convert.</p>
+      </div>
+      <div class="video-grid">
+        <article class="video-item">
+          <div class="video-frame">
+            <div class="yt-thumb" data-video-id="ADS_01_ID"></div>
+          </div>
+          <h3>Ad 01</h3>
+          <p>Performance-focused cut built for quick hook and clear CTA.</p>
+        </article>
+
+        <article class="video-item">
+          <div class="video-frame">
+            <div class="yt-thumb" data-video-id="ADS_02_ID"></div>
+          </div>
+          <h3>Ad 02</h3>
+          <p>Short spot optimized for social placements and mobile viewing.</p>
+        </article>
+
+        <article class="video-item">
+          <div class="video-frame">
+            <div class="yt-thumb" data-video-id="ADS_03_ID"></div>
+          </div>
+          <h3>Ad 03</h3>
+          <p>Brand-forward edit balancing visual polish and clear messaging.</p>
+        </article>
+
+        <article class="video-item">
+          <div class="video-frame">
+            <div class="yt-thumb" data-video-id="ADS_04_ID"></div>
+          </div>
+          <h3>Ad 04</h3>
+          <p>Retargeting-style ad geared towards conversions and recall.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Video Editor &amp; Motion Designer. All rights reserved.</p>
+  </footer>
+</body>
+</html>

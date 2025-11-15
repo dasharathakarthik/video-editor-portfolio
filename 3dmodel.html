@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>3D Model Integration – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <div class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-text">Video Editor &amp; Motion Designer</span>
+    </div>
+    <nav class="nav">
+      <a class="nav-link is-active" href="index.html">Work</a>
+      <a class="nav-link" href="index.html#about">About</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section class="page page--active" aria-label="3D model integration edits">
+      <div class="page-header">
+        <h2>3D Model Integration</h2>
+        <p>3D models composited into real footage with motion tracking and lighting integration.</p>
+      </div>
+      <div class="video-grid">
+        <article class="video-item">
+          <div class="video-frame">
+            <div class="yt-thumb" data-video-id="MODEL_01_ID"></div>
+          </div>
+          <h3>3D Model 01</h3>
+          <p>Product visual integrated into live-action with tracked camera motion.</p>
+        </article>
+
+        <article class="video-item">
+          <div class="video-frame">
+            <div class="yt-thumb" data-video-id="MODEL_02_ID"></div>
+          </div>
+          <h3>3D Model 02</h3>
+          <p>Scene with layered 3D elements blended against practical lighting.</p>
+        </article>
+
+        <article class="video-item">
+          <div class="video-frame">
+            <div class="yt-thumb" data-video-id="MODEL_03_ID"></div>
+          </div>
+          <h3>3D Model 03</h3>
+          <p>Motion graphics and 3D model interaction inside a live-action shot.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Video Editor &amp; Motion Designer. All rights reserved.</p>
+  </footer>
+</body>
+</html>
