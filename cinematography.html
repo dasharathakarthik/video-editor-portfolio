@@ -34,44 +34,22 @@
         <h2>Cinematography</h2>
         <p>Shot and edited footage focused on movement, light, and composition.</p>
       </div>
-      <div class="video-grid">
-        <article class="video-item">
-          <div class="video-frame">
-            <div class="yt-thumb" data-video-id="CINE_01_ID"></div>
-          </div>
-          <h3>Cinematography 01</h3>
-          <p>Stylized sequence emphasizing camera movement and framing.</p>
-        </article>
-
-        <article class="video-item">
-          <div class="video-frame">
-            <div class="yt-thumb" data-video-id="CINE_02_ID"></div>
-          </div>
-          <h3>Cinematography 02</h3>
-          <p>Natural-light visuals with focus on subject and environment.</p>
-        </article>
-
-        <article class="video-item">
-          <div class="video-frame">
-            <div class="yt-thumb" data-video-id="CINE_03_ID"></div>
-          </div>
-          <h3>Cinematography 03</h3>
-          <p>Commercial-ready framing and motion for branded visuals.</p>
-        </article>
-
-        <article class="video-item">
-          <div class="video-frame">
-            <div class="yt-thumb" data-video-id="CINE_04_ID"></div>
-          </div>
-          <h3>Cinematography 04</h3>
-          <p>Moody, cinematic piece built around lighting and depth.</p>
-        </article>
-      </div>
+      <!-- Grid will be populated from Firestore via youtube-data.js for category 'Cinematography' -->
+      <div class="video-grid" data-category="Cinematography"></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> Video Editor &amp; Motion Designer. All rights reserved.</p>
   </footer>
+
+  <!-- Firebase + Auth + Firestore (v8) for category pages -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <!-- Reuse the same Firebase config as admin (initializes firebase, auth, db) -->
+  <script src="./admin/firebase-config.js"></script>
+  <!-- Load videos for this category from Firestore and render inline, muted thumbnails -->
+  <script src="./youtube-data.js"></script>
 </body>
 </html>

@@ -8,6 +8,9 @@
     var grid = document.querySelector(".video-grid");
     if (!grid) return;
 
+    // Each category page sets data-category on its video-grid, e.g. "Reels Edit" or "Ads Edit".
+    var targetCategory = grid.getAttribute("data-category") || null;
+
     // Status element (optional)
     var status = document.createElement("div");
     status.className = "status";
@@ -24,28 +27,34 @@
       return;
     }
 
-    setStatus("Loading YouTube videos…", "");
+    setStatus("Loading videos…", "");
 
-    // We fetch all videos and filter by category on the client.
-    // Use the same category string you choose in the admin panel.
-    var TARGET_CATEGORY = "YouTube Edit";
+    // Build query: if a target category is set, filter by that category.
+    var query = db.collection("videos");
+    if (targetCategory) {
+      query = query.where("category", "==", targetCategory);
+    }
 
-    db.collection("videos")
-      .orderBy("created_at", "desc")
+    query
       .get()
       .then(function (snapshot) {
         var items = [];
         snapshot.forEach(function (doc) {
           var data = doc.data() || {};
-          if (data.category === TARGET_CATEGORY) {
-            items.push({ id: doc.id, data: data });
-          }
+          items.push({ id: doc.id, data: data });
+        });
+
+        // Sort client-side by created_at desc if available
+        items.sort(function (a, b) {
+          var ta = a.data.created_at ? a.data.created_at.toMillis() : 0;
+          var tb = b.data.created_at ? b.data.created_at.toMillis() : 0;
+          return tb - ta;
         });
 
         grid.innerHTML = "";
 
         if (!items.length) {
-          setStatus("No YouTube videos found yet. Add some from the admin panel.", "");
+          setStatus("No videos found yet for this category. Add some from the admin panel.", "");
           return;
         }
 
@@ -73,12 +82,17 @@
           article.appendChild(frame);
 
           var h3 = document.createElement("h3");
-          h3.textContent = v.title || "YouTube Edit";
+          h3.textContent = v.title || "Portfolio Video";
           article.appendChild(h3);
 
           var p = document.createElement("p");
-          p.textContent = v.description || "Long-form edit loaded from your admin panel.";
+          p.textContent = v.description || "Video loaded from your admin panel.";
           article.appendChild(p);
+
+          var meta = document.createElement("div");
+          meta.className = "video-meta";
+          meta.textContent = v.category ? v.category.toString() : "Uncategorized";
+          article.appendChild(meta);
 
           grid.appendChild(article);
         });

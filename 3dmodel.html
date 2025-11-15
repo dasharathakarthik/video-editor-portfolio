@@ -34,36 +34,22 @@
         <h2>3D Model Integration</h2>
         <p>3D models composited into real footage with motion tracking and lighting integration.</p>
       </div>
-      <div class="video-grid">
-        <article class="video-item">
-          <div class="video-frame">
-            <div class="yt-thumb" data-video-id="MODEL_01_ID"></div>
-          </div>
-          <h3>3D Model 01</h3>
-          <p>Product visual integrated into live-action with tracked camera motion.</p>
-        </article>
-
-        <article class="video-item">
-          <div class="video-frame">
-            <div class="yt-thumb" data-video-id="MODEL_02_ID"></div>
-          </div>
-          <h3>3D Model 02</h3>
-          <p>Scene with layered 3D elements blended against practical lighting.</p>
-        </article>
-
-        <article class="video-item">
-          <div class="video-frame">
-            <div class="yt-thumb" data-video-id="MODEL_03_ID"></div>
-          </div>
-          <h3>3D Model 03</h3>
-          <p>Motion graphics and 3D model interaction inside a live-action shot.</p>
-        </article>
-      </div>
+      <!-- Grid will be populated from Firestore via youtube-data.js for category '3D Model Integration' -->
+      <div class="video-grid" data-category="3D Model Integration"></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> Video Editor &amp; Motion Designer. All rights reserved.</p>
   </footer>
+
+  <!-- Firebase + Auth + Firestore (v8) for category pages -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <!-- Reuse the same Firebase config as admin (initializes firebase, auth, db) -->
+  <script src="./admin/firebase-config.js"></script>
+  <!-- Load videos for this category from Firestore and render inline, muted thumbnails -->
+  <script src="./youtube-data.js"></script>
 </body>
 </html>

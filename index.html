@@ -82,113 +82,8 @@
           </p>
         </header>
 
-        <div class="category-grid">
-          <a class="category-card" href="reels.html">
-            <div class="category-card-inner">
-              <div class="category-header">
-                <div class="category-label">01</div>
-                <span class="category-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9"></circle>
-                    <polygon points="10,9 10,15 15,12"></polygon>
-                  </svg>
-                </span>
-                <h3>Reels Edit</h3>
-              </div>
-              <p>Snappy, scroll-stopping vertical edits built for retention and shareability.</p>
-              <span class="category-chip">Short-form</span>
-            </div>
-          </a>
-
-          <a class="category-card" href="youtube.html">
-            <div class="category-card-inner">
-              <div class="category-header">
-                <div class="category-label">02</div>
-                <span class="category-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <rect x="5" y="8" width="11" height="8" rx="1"></rect>
-                    <polygon points="16,10 19,12 16,14"></polygon>
-                  </svg>
-                </span>
-                <h3>YouTube Edit</h3>
-              </div>
-              <p>Long-form storytelling with tight pacing and clean visual language.</p>
-              <span class="category-chip">YouTube</span>
-            </div>
-          </a>
-
-          <a class="category-card" href="ads.html">
-            <div class="category-card-inner">
-              <div class="category-header">
-                <div class="category-label">03</div>
-                <span class="category-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <polygon points="5,9 14,9 18,6 18,18 14,15 5,15"></polygon>
-                    <rect x="3" y="10" width="2" height="4"></rect>
-                  </svg>
-                </span>
-                <h3>Ads Edit</h3>
-              </div>
-              <p>Commercial edits, performance-focused cutdowns, and platform-native ad formats.</p>
-              <span class="category-chip">Commercial</span>
-            </div>
-          </a>
-
-          <a class="category-card" href="3dmodel.html">
-            <div class="category-card-inner">
-              <div class="category-header">
-                <div class="category-label">04</div>
-                <span class="category-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <polygon points="12,4 6,8 12,12 18,8"></polygon>
-                    <polygon points="6,8 6,16 12,20 12,12"></polygon>
-                    <polygon points="18,8 18,16 12,20 12,12"></polygon>
-                  </svg>
-                </span>
-                <h3>3D Model Integration</h3>
-              </div>
-              <p>
-                3D models composited into live-action footage with tracked motion and integrated lighting.
-              </p>
-              <span class="category-chip">3D + live action</span>
-            </div>
-          </a>
-
-          <a class="category-card" href="3dlayers.html">
-            <div class="category-card-inner">
-              <div class="category-header">
-                <div class="category-label">05</div>
-                <span class="category-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <polygon points="12,5 4,9 12,13 20,9"></polygon>
-                    <polygon points="12,13 5,9.5 5,12 12,16 19,12 19,9.5"></polygon>
-                  </svg>
-                </span>
-                <h3>3D Layers Edit</h3>
-              </div>
-              <p>Advanced 3D layers, parallax motion, and dimensional typography for intros and titles.</p>
-              <span class="category-chip">Motion graphics</span>
-            </div>
-          </a>
-
-          <a class="category-card" href="cinematography.html">
-            <div class="category-card-inner">
-              <div class="category-header">
-                <div class="category-label">06</div>
-                <span class="category-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <rect x="4" y="7" width="14" height="10" rx="1"></rect>
-                    <circle cx="8" cy="12" r="1.5"></circle>
-                    <circle cx="14" cy="12" r="1.5"></circle>
-                  </svg>
-                </span>
-                <h3>Cinematography</h3>
-              </div>
-              <p>Shot, framed, and edited sequences focused on light, movement, and storytelling.</p>
-              <span class="category-chip">Direction &amp; camera</span>
-            </div>
-          </a>
-        </div>
+        <!-- Category grid will be populated from Firestore via categories-data.js -->
+        <div class="category-grid" id="category-grid"></div>
       </section>
     </section>
 
@@ -306,5 +201,14 @@
   <footer class="site-footer">
     <p>© <span id="year"></span> Video Editor &amp; Motion Designer. All rights reserved.</p>
   </footer>
+
+  <!-- Firebase + Auth + Firestore (v8) for dynamic categories -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <!-- Reuse the same Firebase config as admin (initializes firebase, auth, db) -->
+  <script src="./admin/firebase-config.js"></script>
+  <!-- Load categories from Firestore and render homepage category cards -->
+  <script src="./categories-data.js"></script>
 </body>
 </html>

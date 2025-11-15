@@ -34,44 +34,22 @@
         <h2>Ads Edit</h2>
         <p>Commercial work, performance ads, and campaigns designed to convert.</p>
       </div>
-      <div class="video-grid">
-        <article class="video-item">
-          <div class="video-frame">
-            <div class="yt-thumb" data-video-id="ADS_01_ID"></div>
-          </div>
-          <h3>Ad 01</h3>
-          <p>Performance-focused cut built for quick hook and clear CTA.</p>
-        </article>
-
-        <article class="video-item">
-          <div class="video-frame">
-            <div class="yt-thumb" data-video-id="ADS_02_ID"></div>
-          </div>
-          <h3>Ad 02</h3>
-          <p>Short spot optimized for social placements and mobile viewing.</p>
-        </article>
-
-        <article class="video-item">
-          <div class="video-frame">
-            <div class="yt-thumb" data-video-id="ADS_03_ID"></div>
-          </div>
-          <h3>Ad 03</h3>
-          <p>Brand-forward edit balancing visual polish and clear messaging.</p>
-        </article>
-
-        <article class="video-item">
-          <div class="video-frame">
-            <div class="yt-thumb" data-video-id="ADS_04_ID"></div>
-          </div>
-          <h3>Ad 04</h3>
-          <p>Retargeting-style ad geared towards conversions and recall.</p>
-        </article>
-      </div>
+      <!-- Grid will be populated from Firestore via youtube-data.js for category 'Ads Edit' -->
+      <div class="video-grid" data-category="Ads Edit"></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> Video Editor &amp; Motion Designer. All rights reserved.</p>
   </footer>
+
+  <!-- Firebase + Auth + Firestore (v8) for category pages -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <!-- Reuse the same Firebase config as admin (initializes firebase, auth, db) -->
+  <script src="./admin/firebase-config.js"></script>
+  <!-- Load videos for this category from Firestore and render inline, muted thumbnails -->
+  <script src="./youtube-data.js"></script>
 </body>
 </html>
