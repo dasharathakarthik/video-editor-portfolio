@@ -12,13 +12,13 @@ var firebaseConfig = {
 };
 
 // Initialize Firebase app if it hasn't been initialized yet
-if (!firebase.apps.length) {
+if (!firebase.apps || !firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-// Convenience references
-var auth = firebase.auth();
-var db = firebase.firestore();
+// Convenience references (guarded in case a page only loads some SDKs)
+var auth = typeof firebase.auth === "function" ? firebase.auth() : null;
+var db = typeof firebase.firestore === "function" ? firebase.firestore() : null;
 
 // -----------------------------
 // Authentication helper methods
